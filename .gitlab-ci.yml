@@ -1,0 +1,16 @@
+stages:
+ - build
+before_script:
+       - node -v
+       - rm -rf package-lock.json
+       - npm install 
+       
+      
+build-min-code:
+ stage: build
+ script:
+   - npm run build
+ tags:
+  - dev
+ only:
+  - dev
